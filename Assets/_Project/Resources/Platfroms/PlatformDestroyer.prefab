@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1077357789787212872}
   - component: {fileID: 8728490095013358200}
   - component: {fileID: 3855222300844111902}
-  - component: {fileID: 8462374182323392228}
+  - component: {fileID: -320005278008118981}
   m_Layer: 15
-  m_Name: PlatformSpawner
+  m_Name: PlatformDestroyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8462374182323392228
+--- !u!114 &-320005278008118981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,6 +91,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3016500380106876458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c9ca76b08634a23826848ae469f0405, type: 3}
+  m_Script: {fileID: 11500000, guid: 236b584ecb4a47adba1c0265343e9091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
