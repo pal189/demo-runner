@@ -4,19 +4,22 @@ namespace _Project.Scripts.Infrastructure
 {
     public class Factory : IFactory
     {
-        private const string PlatformsPath = "Platfroms/Platform";
+        private const string PlatformsPath = "Platfroms/Platform prefabs";
+        private readonly GameObject[] _platforms;
 
-        public GameObject CreatePlatform(Vector3 at) => Instantiate(PlatformsPath, at);
-        private GameObject Instantiate(string path)
+        public Factory()
         {
-            var prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab);
+            _platforms = Resources.LoadAll<GameObject>(PlatformsPath);
         }
 
-        private GameObject Instantiate(string path, Vector3 at)
-        {
-            var prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab, at, Quaternion.identity);
-        }
+        //TODO [PP 21/03/24]: Make Random Service
+        public GameObject CreatePlatform(Vector3 at) =>
+            Object.Instantiate(_platforms[Random.Range(0, _platforms.Length)], at, Quaternion.identity);
+
+        private GameObject Instantiate(string path) =>
+            Object.Instantiate(Resources.Load<GameObject>(path));
+
+        private GameObject Instantiate(string path, Vector3 at) => 
+            Object.Instantiate(Resources.Load<GameObject>(path), at, Quaternion.identity);
     }
 }
