@@ -624,7 +624,7 @@ PrefabInstance:
     - target: {fileID: 2066896392038628118, guid: 0c51f1baee8514b4881c203712e21030,
         type: 3}
       propertyPath: m_Name
-      value: Player_Dog
+      value: Hero
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
