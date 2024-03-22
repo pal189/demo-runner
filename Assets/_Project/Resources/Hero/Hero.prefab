@@ -1262,7 +1262,6 @@ GameObject:
   - component: {fileID: 2066896392029128874}
   - component: {fileID: 8406726113302118299}
   - component: {fileID: 4443679294836305377}
-  - component: {fileID: 3258803633127952318}
   - component: {fileID: 5105089650666235674}
   m_Layer: 11
   m_Name: Hero
@@ -1348,20 +1347,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 2066896392029128874}
---- !u!114 &3258803633127952318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066896392038628118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b439f0f8e404462eb6936a93148b7ec7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeroAnimator: {fileID: 4443679294836305377}
-  CharacterController: {fileID: 8406726113302118299}
 --- !u!114 &5105089650666235674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,12 +1360,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hero: {fileID: 2066896392038131574}
+  HeroAnimator: {fileID: 4443679294836305377}
+  CharacterController: {fileID: 8406726113302118299}
   HeroHorizontalPositions:
   - -3.5
   - 0
   - 3.5
   InitialPositionIndex: 1
-  SteeringTime: 0.5
+  SteeringTolerance: 1
+  SteeringSpeed: 7
 --- !u!1 &2066896392038628120
 GameObject:
   m_ObjectHideFlags: 0
