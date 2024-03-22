@@ -1,18 +1,17 @@
 ﻿using _Project.Scripts.Infrastructure;
-using _Project.Scripts.Services;
+using _Project.Scripts.Services.UserInput;
 using DG.Tweening;
-using UnityEngine;
 
 public class Game
 {
     public static Factory Factory;
     public static IInputService InputService;
 
-    public Game()
+    public Game(InputCreator inputCreator)
     {
         InitDOTween();
         RegisterFactory();
-        RegisterInputService();
+        RegisterInputService(inputCreator);
     }
 
     private void InitDOTween()
@@ -20,13 +19,10 @@ public class Game
         DOTween.Init(true, false, LogBehaviour.Verbose);
     }
 
-    private void RegisterInputService()
+    private void RegisterInputService(InputCreator inputCreator)
     {
-        if(Application.isEditor)
-            InputService = new StandaloneInputService();
-        else
-            InputService = new MobileInputService();
+        InputService = inputCreator.CreateInputService();
     }
 
-    private static void RegisterFactory() => Factory = new Factory();
+    private void RegisterFactory() => Factory = new Factory();
 }

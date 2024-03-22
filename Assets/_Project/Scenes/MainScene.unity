@@ -1045,6 +1045,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bootstrapper
       objectReference: {fileID: 0}
+    - target: {fileID: 3284126022870625981, guid: 11c13585262e8f94fa24c013d7b355be,
+        type: 3}
+      propertyPath: InputCreator
+      value: 
+      objectReference: {fileID: 4947729273790732426}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1194,8 +1199,84 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3887729759008149885, guid: 5611b9f998b681b4eaedb752c2402f33,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4947729273790732427}
+    - targetCorrespondingSourceObject: {fileID: 3887729759008149885, guid: 5611b9f998b681b4eaedb752c2402f33,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4947729273790732426}
   m_SourcePrefab: {fileID: 100100000, guid: 5611b9f998b681b4eaedb752c2402f33, type: 3}
+--- !u!1 &4947729273790732425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3887729759008149885, guid: 5611b9f998b681b4eaedb752c2402f33,
+    type: 3}
+  m_PrefabInstance: {fileID: 4947729273790732424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4947729273790732426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947729273790732425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853ec65c73cc4d6f8aaac5570842174f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leanFingerSwipe: {fileID: 4947729273790732427}
+--- !u!114 &4947729273790732427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947729273790732425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b29544581cbff48a74923442363fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredAngle: 0
+  requiredArc: -1
+  onFinger:
+    m_PersistentCalls:
+      m_Calls: []
+  modify: 0
+  coordinate: 0
+  multiplier: 1
+  onDelta:
+    m_PersistentCalls:
+      m_Calls: []
+  onDistance:
+    m_PersistentCalls:
+      m_Calls: []
+  ScreenDepth:
+    Conversion: 1
+    Camera: {fileID: 0}
+    Object: {fileID: 0}
+    Layers:
+      serializedVersion: 2
+      m_Bits: 4294967291
+    Distance: 0
+  onWorldFrom:
+    m_PersistentCalls:
+      m_Calls: []
+  onWorldTo:
+    m_PersistentCalls:
+      m_Calls: []
+  onWorldDelta:
+    m_PersistentCalls:
+      m_Calls: []
+  onWorldFromTo:
+    m_PersistentCalls:
+      m_Calls: []
+  ignoreStartedOverGui: 1
+  ignoreIsOverGui: 0
+  requiredSelectable: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

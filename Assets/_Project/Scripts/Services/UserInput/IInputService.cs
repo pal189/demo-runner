@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-namespace _Project.Scripts.Services
+namespace _Project.Scripts.Services.UserInput
 {
     public interface IInputService
     {
-        Vector2 Axis { get; }
     }
 }
