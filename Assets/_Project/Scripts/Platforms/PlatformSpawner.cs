@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Project.Scripts.Infrastructure;
+using UnityEngine;
 
 namespace _Project.Scripts.Platforms
 {

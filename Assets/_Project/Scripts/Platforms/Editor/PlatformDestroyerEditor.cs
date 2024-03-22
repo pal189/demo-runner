@@ -1,10 +1,10 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace _Project.Scripts.Platforms
+namespace _Project.Scripts.Platforms.Editor
 {
     [CustomEditor(typeof(PlatformDestroyer))]
-    public class PlatformDestroyerEditor : Editor
+    public class PlatformDestroyerEditor : UnityEditor.Editor
     {
         [DrawGizmo(GizmoType.Active | GizmoType.Pickable | GizmoType.NonSelected)]
         public static void RenderCustomGizmo(PlatformDestroyer destroyer, GizmoType gizmoType)

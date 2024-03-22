@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
-public class PlatformDestroyer : MonoBehaviour
+namespace _Project.Scripts.Platforms
 {
-    private void OnTriggerEnter(Collider platformMarker)
+    [RequireComponent(typeof(Collider))]
+    public class PlatformDestroyer : MonoBehaviour
     {
-        GameObject platform = platformMarker.transform.parent.gameObject;
-        Destroy(platform);
+        private void OnTriggerEnter(Collider platformMarker)
+        {
+            GameObject platform = platformMarker.transform.parent.gameObject;
+            Destroy(platform);
+        }
     }
 }

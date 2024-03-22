@@ -1,10 +1,10 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace _Project.Scripts.Platforms
+namespace _Project.Scripts.Platforms.Editor
 {
     [CustomEditor(typeof(PlatformSpawner))]
-    public class PlatformSpawnerEditor : Editor
+    public class PlatformSpawnerEditor : UnityEditor.Editor
     {
         [DrawGizmo(GizmoType.Active | GizmoType.Pickable | GizmoType.NonSelected)]
         public static void RenderCustomGizmo(PlatformSpawner spawner, GizmoType gizmoType)
@@ -13,8 +13,4 @@ namespace _Project.Scripts.Platforms
             Gizmos.DrawSphere(spawner.transform.position, 0.5f);
         }
     }
-}
-
-namespace _Project.Scripts.Platforms
-{
 }

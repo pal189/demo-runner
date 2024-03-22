@@ -1,6 +1,10 @@
 ﻿using System;
+using _Project.Scripts.Infrastructure;
 using _Project.Scripts.Services;
+using _Project.Scripts.Services.Inputs;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using UniRx;
 using UnityEngine;
 
 namespace _Project.Scripts.Hero
@@ -14,7 +18,6 @@ namespace _Project.Scripts.Hero
         public CharacterController CharacterController;
 
         private IInputService _inputService;
-        private bool _isOldSwipe;
         private Tween _steerTween;
         private int _targetPositionIndex;
 
@@ -22,41 +25,17 @@ namespace _Project.Scripts.Hero
         {
             _inputService = Game.InputService;
             _targetPositionIndex = InitialPositionIndex;
+            
+            _inputService.OnSwipeLeft.Subscribe(_=>Debug.Log("Swipe left")).AddTo(this);
+            _inputService.OnSwipeRight.Subscribe(_=>Debug.Log("Swipe right")).AddTo(this);
         }
 
         private void Update()
         {
-            UpdateTargetPositionIndex();
-            HandleSteeringMovement();
+            // HandleSteeringMovement();
         }
 
-        private void UpdateTargetPositionIndex()
-        {
-            ResetOldSwipe();
-            if (ShouldHandleSwipe())
-                HandleSwipe();
-        }
-
-        private void ResetOldSwipe()
-        {
-            if (_inputService.Axis.x == 0)
-                _isOldSwipe = false;
-        }
-
-        private bool ShouldHandleSwipe() =>
-            !_isOldSwipe
-            && _inputService.Axis.x != 0;
-
-        private void HandleSwipe()
-        {
-            _isOldSwipe = true;
-            float xAxis = _inputService.Axis.x;
-
-            if (xAxis > 0 && _targetPositionIndex < HeroHorizontalPositions.Length - 1)
-                _targetPositionIndex++;
-            else if (xAxis < 0 && _targetPositionIndex > 0)
-                _targetPositionIndex--;
-        }
+       
 
         private void HandleSteeringMovement()
         {
@@ -70,10 +49,10 @@ namespace _Project.Scripts.Hero
         private bool IsHeroOnTarget() =>
             Math.Abs(HeroHorizontalPositions[_targetPositionIndex] - Hero.position.x) < Mathf.Epsilon;
 
-        private void FixedUpdate()
-        {
-            CharacterController.Move(new Vector3(HeroHorizontalPositions[_targetPositionIndex], Hero.position.y, Hero.position.z));
-        }
+        // private void FixedUpdate()
+        // {
+        //     CharacterController.Move(new Vector3(HeroHorizontalPositions[_targetPositionIndex], Hero.position.y, Hero.position.z));
+        // }
 
         // private bool IsHeroSteering() =>
         //     _steerTween != null;

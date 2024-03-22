@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Bootstrapper : MonoBehaviour
+namespace _Project.Scripts.Infrastructure
 {
-    private Game _game;
-
-    private void Awake()
+    public class Bootstrapper : MonoBehaviour
     {
-        _game = new Game();
-        DontDestroyOnLoad(this);
+        private Game _game;
+
+        private void Awake()
+        {
+            _game = new Game();
+            DontDestroyOnLoad(this);
+        }
     }
 }

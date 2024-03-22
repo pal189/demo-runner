@@ -1,32 +1,34 @@
-﻿using _Project.Scripts.Infrastructure;
-using _Project.Scripts.Services;
+﻿using _Project.Scripts.Services.Inputs;
 using DG.Tweening;
 using UnityEngine;
 
-public class Game
+namespace _Project.Scripts.Infrastructure
 {
-    public static Factory Factory;
-    public static IInputService InputService;
-
-    public Game()
+    public class Game
     {
-        InitDOTween();
-        RegisterFactory();
-        RegisterInputService();
-    }
+        public static Factory Factory;
+        public static IInputService InputService;
 
-    private void InitDOTween()
-    {
-        DOTween.Init(true, false, LogBehaviour.Verbose);
-    }
+        public Game()
+        {
+            InitDOTween();
+            RegisterFactory();
+            RegisterInputService();
+        }
 
-    private void RegisterInputService()
-    {
-        if(Application.isEditor)
-            InputService = new StandaloneInputService();
-        else
-            InputService = new MobileInputService();
-    }
+        private void InitDOTween()
+        {
+            DOTween.Init(true, false, LogBehaviour.Verbose);
+        }
 
-    private static void RegisterFactory() => Factory = new Factory();
+        private void RegisterInputService()
+        {
+            if(Application.isEditor)
+                InputService = new StandaloneInputService();
+            else
+                InputService = new MobileInputService();
+        }
+
+        private static void RegisterFactory() => Factory = new Factory();
+    }
 }
