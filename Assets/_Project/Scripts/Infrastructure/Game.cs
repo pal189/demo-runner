@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Infrastructure;
 using _Project.Scripts.Services;
+using DG.Tweening;
 using UnityEngine;
 
 public class Game
@@ -9,8 +10,14 @@ public class Game
 
     public Game()
     {
+        InitDOTween();
         RegisterFactory();
         RegisterInputService();
+    }
+
+    private void InitDOTween()
+    {
+        DOTween.Init(true, false, LogBehaviour.Verbose);
     }
 
     private void RegisterInputService()
