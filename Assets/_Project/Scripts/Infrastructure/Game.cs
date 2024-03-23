@@ -6,7 +6,7 @@ namespace _Project.Scripts.Infrastructure
 {
     public class Game
     {
-        public static Factory Factory;
+        public static IFactory Factory;
         public static IInputService InputService;
         public readonly GameStateMachine StateMachine;
 

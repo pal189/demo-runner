@@ -1,16 +1,19 @@
 using _Project.Scripts.UI;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace _Project.Scripts.Infrastructure.GSM
 {
     public class LoadLevelState : IPayloadedState<string>
     {
-        private readonly Factory _factory;
+        private const string StartPointTag = "StartPoint";
+        
+        private readonly IFactory _factory;
+        private readonly LoadingCurtain _loadingCurtain;
         private readonly SceneLoader _sceneLoader;
         private readonly GameStateMachine _stateMachine;
-        private readonly LoadingCurtain _loadingCurtain;
 
-        public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, Factory factory, LoadingCurtain loadingCurtain)
+        public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, IFactory factory, LoadingCurtain loadingCurtain)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
@@ -29,7 +32,8 @@ namespace _Project.Scripts.Infrastructure.GSM
 
         private void OnLevelLoaded()
         {
-            _factory.CreateHero();
+            GameObject startPoint = GameObject.FindWithTag(StartPointTag);
+            _factory.CreateHero(startPoint.transform.position);
             _stateMachine.Enter<GameLoopState>();
         }
     }

@@ -9,7 +9,7 @@ namespace _Project.Scripts.Infrastructure.GSM
         private readonly Dictionary<Type, IState> _states;
         private IState _activeState;
 
-        public GameStateMachine(SceneLoader sceneLoader, Factory factory, LoadingCurtain curtain)
+        public GameStateMachine(SceneLoader sceneLoader, IFactory factory, LoadingCurtain curtain)
         {
             _states = new Dictionary<Type, IState>()
             {
