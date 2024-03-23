@@ -1,6 +1,5 @@
-﻿using _Project.Scripts.Services.Inputs;
-using DG.Tweening;
-using UnityEngine;
+﻿using _Project.Scripts.Infrastructure.GSM;
+using _Project.Scripts.Services.Inputs;
 
 namespace _Project.Scripts.Infrastructure
 {
@@ -8,27 +7,11 @@ namespace _Project.Scripts.Infrastructure
     {
         public static Factory Factory;
         public static IInputService InputService;
+        public readonly GameStateMachine StateMachine;
 
         public Game()
         {
-            InitDOTween();
-            RegisterFactory();
-            RegisterInputService();
+            StateMachine = new GameStateMachine(new SceneLoader());
         }
-
-        private void InitDOTween()
-        {
-            DOTween.Init(true, false, LogBehaviour.Verbose);
-        }
-
-        private void RegisterInputService()
-        {
-            if(Application.isEditor)
-                InputService = new StandaloneInputService();
-            else
-                InputService = new MobileInputService();
-        }
-
-        private static void RegisterFactory() => Factory = new Factory();
     }
 }

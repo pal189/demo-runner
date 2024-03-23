@@ -1,3 +1,4 @@
+using _Project.Scripts.Infrastructure.GSM;
 using UnityEngine;
 
 namespace _Project.Scripts.Infrastructure
@@ -9,6 +10,7 @@ namespace _Project.Scripts.Infrastructure
         private void Awake()
         {
             _game = new Game();
+            _game.StateMachine.Enter<BootstrapState>();
             DontDestroyOnLoad(this);
         }
     }
