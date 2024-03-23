@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Infrastructure.GSM;
 using _Project.Scripts.Services.Inputs;
+using _Project.Scripts.UI;
 
 namespace _Project.Scripts.Infrastructure
 {
@@ -9,10 +10,10 @@ namespace _Project.Scripts.Infrastructure
         public static IInputService InputService;
         public readonly GameStateMachine StateMachine;
 
-        public Game()
+        public Game(LoadingCurtain curtain)
         {
             Factory = new Factory();
-            StateMachine = new GameStateMachine(new SceneLoader(), Factory);
+            StateMachine = new GameStateMachine(new SceneLoader(), Factory, curtain);
         }
     }
 }

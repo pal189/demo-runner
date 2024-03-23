@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Project.Scripts.UI;
 
 namespace _Project.Scripts.Infrastructure.GSM
 {
@@ -8,12 +9,13 @@ namespace _Project.Scripts.Infrastructure.GSM
         private readonly Dictionary<Type, IState> _states;
         private IState _activeState;
 
-        public GameStateMachine(SceneLoader sceneLoader, Factory factory)
+        public GameStateMachine(SceneLoader sceneLoader, Factory factory, LoadingCurtain curtain)
         {
             _states = new Dictionary<Type, IState>()
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, factory)
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, factory, curtain),
+                [typeof(GameLoopState)] = new GameLoopState()
             };
         }
 
