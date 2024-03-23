@@ -1,4 +1,6 @@
-﻿using _Project.Scripts.Infrastructure.GSM;
+﻿using _Project.Scripts.Infrastructure.AssetProviders;
+using _Project.Scripts.Infrastructure.Factories;
+using _Project.Scripts.Infrastructure.GSM;
 using _Project.Scripts.Services.Inputs;
 using _Project.Scripts.UI;
 
@@ -12,7 +14,7 @@ namespace _Project.Scripts.Infrastructure
 
         public Game(LoadingCurtain curtain)
         {
-            Factory = new Factory();
+            Factory = new Factory(new AssetProvider());
             StateMachine = new GameStateMachine(new SceneLoader(), Factory, curtain);
         }
     }
