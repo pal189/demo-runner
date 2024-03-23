@@ -6,7 +6,7 @@ namespace _Project.Scripts.Infrastructure
 {
     public class SceneLoader
     {
-        public async void LoadSceneAsync(string sceneName, Action onLoaded = null)
+        public async UniTask LoadSceneAsync(string sceneName, Action onLoaded = null)
         {
             if (SceneManager.GetActiveScene().name == sceneName)
             {

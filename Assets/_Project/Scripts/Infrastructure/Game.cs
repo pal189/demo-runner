@@ -11,7 +11,8 @@ namespace _Project.Scripts.Infrastructure
 
         public Game()
         {
-            StateMachine = new GameStateMachine(new SceneLoader());
+            Factory = new Factory();
+            StateMachine = new GameStateMachine(new SceneLoader(), Factory);
         }
     }
 }
