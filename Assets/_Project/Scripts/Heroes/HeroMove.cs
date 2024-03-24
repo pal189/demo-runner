@@ -1,11 +1,11 @@
 ﻿using System;
-using _Project.Scripts.Infrastructure;
 using _Project.Scripts.Services.Inputs;
 using DG.Tweening;
 using UniRx;
 using UnityEngine;
+using Zenject;
 
-namespace _Project.Scripts.Hero
+namespace _Project.Scripts.Heroes
 {
     [RequireComponent(typeof(HeroAnimator))]
     public class HeroMove : MonoBehaviour
@@ -22,15 +22,19 @@ namespace _Project.Scripts.Hero
         private IInputService _inputService;
         private Tween _steerTween;
         private int _targetPositionIndex;
-
-        private void Awake()
+        
+        [Inject]
+        private void Construct(IInputService inputService)
         {
-            _inputService = Game.InputService;
-
+            _inputService = inputService;
+       
             _targetPositionIndex = InitialPositionIndex;
             _inputService.OnSwipeLeft.Subscribe(_ => TrySteerLeft()).AddTo(this);
             _inputService.OnSwipeRight.Subscribe(_ => TrySteerRight()).AddTo(this);
+        }
 
+        private void Awake()
+        {
             HeroAnimator.Move(0.7f);
         }
 

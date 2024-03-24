@@ -1,6 +1,5 @@
 using _Project.Scripts.Infrastructure.Factories;
 using _Project.Scripts.UI;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace _Project.Scripts.Infrastructure.GSM
@@ -9,27 +8,27 @@ namespace _Project.Scripts.Infrastructure.GSM
     {
         private const string StartPointTag = "StartPoint";
         
-        private readonly IFactory _factory;
-        private readonly LoadingCurtain _loadingCurtain;
-        private readonly SceneLoader _sceneLoader;
-        private readonly GameStateMachine _stateMachine;
+        private readonly IGameFactory _factory;
+        private readonly ICurtainService _curtain;
+        private readonly ISceneLoader _sceneLoader;
+        private readonly IGameStateMachine _stateMachine;
 
-        public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, IFactory factory, LoadingCurtain loadingCurtain)
+        public LoadLevelState(IGameStateMachine stateMachine, ISceneLoader sceneLoader, IGameFactory factory, ICurtainService curtain)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
             _factory = factory;
-            _loadingCurtain = loadingCurtain;
+            _curtain = curtain;
         }
 
         public void Enter(string sceneName)
         {
-            _loadingCurtain.Show();
+            _curtain.Show();
             _sceneLoader.LoadSceneAsync(sceneName, OnLevelLoaded);
         }
 
         public void Exit() => 
-            _loadingCurtain.Hide();
+            _curtain.Hide();
 
         private void OnLevelLoaded()
         {

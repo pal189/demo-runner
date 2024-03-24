@@ -4,7 +4,12 @@ using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts.Infrastructure
 {
-    public class SceneLoader
+    public interface ISceneLoader
+    {
+        UniTask LoadSceneAsync(string sceneName, Action onLoaded = null);
+    }
+
+    public class SceneLoader : ISceneLoader
     {
         public async UniTask LoadSceneAsync(string sceneName, Action onLoaded = null)
         {

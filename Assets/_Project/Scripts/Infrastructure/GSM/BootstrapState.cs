@@ -1,18 +1,16 @@
-using _Project.Scripts.Services.Inputs;
 using DG.Tweening;
-using UnityEngine;
 
 namespace _Project.Scripts.Infrastructure.GSM
 {
     public class BootstrapState : ISimpleState
     {
-        private const string BootstrapSceneName = "Bootstrap";
-        private const string MainSceneName = "Main";
+        private const string StartUpScene = "StartUp";
+        private const string MainScene = "Main";
         
-        private readonly GameStateMachine _stateMachine;
-        private readonly SceneLoader _sceneLoader;
+        private readonly ISceneLoader _sceneLoader;
+        private readonly IGameStateMachine _stateMachine;
 
-        public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader)
+        public BootstrapState(IGameStateMachine stateMachine, ISceneLoader sceneLoader)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
@@ -21,13 +19,7 @@ namespace _Project.Scripts.Infrastructure.GSM
         public void Enter()
         {
             InitDOTween();
-            RegisterInputService();
-            _sceneLoader.LoadSceneAsync(BootstrapSceneName, onLoaded: EnterLevel);
-        }
-
-        private void EnterLevel()
-        {
-            _stateMachine.Enter<LoadLevelState, string>(MainSceneName);
+            _sceneLoader.LoadSceneAsync(StartUpScene, onLoaded: EnterLevel);
         }
 
 
@@ -35,15 +27,13 @@ namespace _Project.Scripts.Infrastructure.GSM
         {
         }
 
+        private void EnterLevel()
+        {
+            _stateMachine.Enter<LoadLevelState, string>(MainScene);
+        }
+
 
         private void InitDOTween() =>
             DOTween.Init(true, false, LogBehaviour.Verbose);
-
-        private void RegisterInputService()
-        {
-            Game.InputService = Application.isEditor
-                ? new StandaloneInputService()
-                : new MobileInputService();
-        }
     }
 }

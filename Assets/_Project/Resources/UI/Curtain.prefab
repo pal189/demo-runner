@@ -58,7 +58,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 17
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: -100
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcf445e5d8b475ab2429a00ddc626ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Curtain: {fileID: 2429229742520787651}
+  CurtainCanvasGroup: {fileID: 2429229742520787651}
 --- !u!1 &8269019234712322429
 GameObject:
   m_ObjectHideFlags: 0

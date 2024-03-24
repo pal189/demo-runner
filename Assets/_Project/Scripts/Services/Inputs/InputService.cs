@@ -4,6 +4,12 @@ using UnityEngine;
 
 namespace _Project.Scripts.Services.Inputs
 {
+    public interface IInputService
+    {
+        ReactiveCommand OnSwipeLeft { get; }
+        ReactiveCommand OnSwipeRight { get; }
+    }
+    
     public abstract class InputService : IInputService, IDisposable
     {
         private const string SwipeLeft = "SwipeLeft";

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Project.Scripts.Hero
+namespace _Project.Scripts.Heroes
 {
     public class HeroAnimator : MonoBehaviour
     {
