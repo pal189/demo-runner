@@ -6,6 +6,8 @@ namespace _Project.Scripts.Heroes
     {
         private static readonly int isMoving = Animator.StringToHash("IsMoving");
         private static readonly int isJumping = Animator.StringToHash("IsJumping");
+        private static readonly int isFalling = Animator.StringToHash("IsFalling");
+        private static readonly int isMidAir = Animator.StringToHash("IsMidAir");
         private static readonly int Speed = Animator.StringToHash("Speed");
 
         public Animator Animator;
@@ -23,8 +25,31 @@ namespace _Project.Scripts.Heroes
         {
             StopMoving();
             Animator.SetBool(isJumping, true);
+            Animator.SetBool(isMidAir, false);
+            Animator.SetBool(isFalling, false);
+        }
+        
+        public void Fall()
+        {
+            StopMoving();
+            Animator.SetBool(isJumping, false);
+            Animator.SetBool(isMidAir, false);
+            Animator.SetBool(isFalling, true);
+        }
+        
+        public void MidAir()
+        {
+            Animator.SetBool(isJumping, false);
+            Animator.SetBool(isMidAir, true);
+            Animator.SetBool(isFalling, false);
+        }
+        
+        public void StopJumping()
+        {
+            Animator.SetBool(isJumping, false);
+            Animator.SetBool(isMidAir, false);
+            Animator.SetBool(isFalling, false);
         }
 
-        public void StopJumping() => Animator.SetBool(isJumping, false);
     }
 }
