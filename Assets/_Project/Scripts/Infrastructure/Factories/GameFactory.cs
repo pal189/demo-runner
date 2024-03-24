@@ -7,7 +7,7 @@ namespace _Project.Scripts.Infrastructure.Factories
 {
     public interface IGameFactory
     {
-        Hero CreateHero(Vector3 at);
+        Hero CreateHero(Vector3 at, Transform parent = null);
         GameObject CreatePlatform(Vector3 at);
     }
     
@@ -22,10 +22,10 @@ namespace _Project.Scripts.Infrastructure.Factories
             _container = container;
         }
 
-        public Hero CreateHero(Vector3 at)
+        public Hero CreateHero(Vector3 at, Transform parent = null)
         {
             var prefab = _assetProvider.GetPrefab(AssetPaths.HeroPath);
-            var hero = _container.InstantiatePrefabForComponent<Hero>(prefab, at, Quaternion.identity, null);
+            var hero = _container.InstantiatePrefabForComponent<Hero>(prefab, at, Quaternion.identity, parent);
             
             _container.BindInterfacesAndSelfTo<Hero>()
                 .FromInstance(hero)

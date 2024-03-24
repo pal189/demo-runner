@@ -33,7 +33,7 @@ namespace _Project.Scripts.Infrastructure.GSM
         private void OnLevelLoaded()
         {
             GameObject startPoint = GameObject.FindWithTag(StartPointTag);
-            _factory.CreateHero(startPoint.transform.position);
+            _factory.CreateHero(startPoint.transform.position, startPoint.transform);
             _stateMachine.Enter<GameLoopState>();
         }
     }
