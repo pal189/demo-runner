@@ -2,12 +2,11 @@
 using _Project.Scripts.Infrastructure.AssetProviders;
 using _Project.Scripts.Infrastructure.Factories;
 using _Project.Scripts.Infrastructure.GSM;
-using _Project.Scripts.Services.Inputs;
-using _Project.Scripts.UI;
+using _Project.Scripts.Infrastructure.Inputs;
 using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts.Infrastructure.Installers
+namespace _Project.Scripts.Infrastructure
 {
     public class ProjectInstaller : MonoInstaller
     {
@@ -30,9 +29,11 @@ namespace _Project.Scripts.Infrastructure.Installers
             
             Container.BindInterfacesTo(inputServiceType)
                 .AsSingle().NonLazy();
-
+            
             Container.BindInterfacesTo<GameFactory>()
-                .AsSingle().NonLazy();
+                .AsSingle()
+                .CopyIntoDirectSubContainers()
+                .NonLazy();
             
             Container.BindInterfacesTo<SceneLoader>()
                 .AsSingle().NonLazy();

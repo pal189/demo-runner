@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Project.Scripts.Infrastructure.Factories;
-using _Project.Scripts.UI;
 using Zenject;
 
 namespace _Project.Scripts.Infrastructure.GSM

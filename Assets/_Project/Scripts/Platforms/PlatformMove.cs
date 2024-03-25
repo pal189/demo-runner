@@ -1,11 +1,20 @@
+using _Project.Scripts.Data;
 using UnityEngine;
+using Zenject;
 
 namespace _Project.Scripts.Platforms
 {
     public class PlatformMove : MonoBehaviour
     {
         public Transform Transform;
-        public float Speed = 4;
+        private float Speed => _level.CurrentSpeed;
+        private ILevel _level;
+
+        [Inject]
+        public void Construct(ILevel level)
+        {
+            _level = level;
+        }
 
         private void Update()
         {

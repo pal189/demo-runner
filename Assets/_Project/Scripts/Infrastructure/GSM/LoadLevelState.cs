@@ -1,5 +1,4 @@
 using _Project.Scripts.Infrastructure.Factories;
-using _Project.Scripts.UI;
 using UnityEngine;
 
 namespace _Project.Scripts.Infrastructure.GSM
