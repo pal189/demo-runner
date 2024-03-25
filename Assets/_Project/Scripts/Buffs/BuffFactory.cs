@@ -1,10 +1,11 @@
-﻿using Zenject;
+﻿using _Project.Scripts.Effects;
+using Zenject;
 
 namespace _Project.Scripts.Buffs
 {
     public interface IBuffFactory
     {
-        T CreateBuff<T>() where T : IBuff;
+        T CreateBuff<T>(IBuffCreator creator) where T : IBuff;
     }
 
     public class BuffFactory : IBuffFactory
@@ -14,8 +15,12 @@ namespace _Project.Scripts.Buffs
         public BuffFactory(DiContainer container) =>
             _container = container;
 
-        public T CreateBuff<T>() where T : IBuff =>
-            _container.Resolve<T>();
+        public T CreateBuff<T>(IBuffCreator creator) where T : IBuff
+        {
+            var buff = _container.Resolve<T>();
+            buff.Init(creator);
+            return buff;
+        }
     }
 }
 

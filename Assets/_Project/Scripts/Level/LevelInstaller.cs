@@ -10,7 +10,6 @@ namespace _Project.Scripts.Data
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<Level>().FromInstance(LevelInstance).AsSingle().NonLazy();
-            // Container.BindInterfacesAndSelfTo<Level>().FromInstance(LevelInstance).AsSingle().NonLazy();
         }
     }
 }

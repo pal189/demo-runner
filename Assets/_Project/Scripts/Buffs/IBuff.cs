@@ -5,15 +5,18 @@ namespace _Project.Scripts.Buffs
 {
     public interface IBuff
     {
-        IBuffCreator BuffCreator { get; set; }
+        IBuffCreator IBuffCreator { get; }
 
         void Activate();
         void Tick(float delta);
+        void Init(IBuffCreator buffCreator);
+
     }
 
-    public abstract class Buff : IBuff
+    public abstract class Buff<T> : IBuff where T : IBuffCreator
     {
         private readonly BuffsController _controller;
+        protected T BuffCreator;
 
         protected float Duration;
         public bool IsFinished;
@@ -21,12 +24,17 @@ namespace _Project.Scripts.Buffs
         protected Buff(BuffsController controller)
         {
             _controller = controller;
+        }
+        public void Init(IBuffCreator buffCreator) => Init((T)buffCreator);
+        public void Init(T buffCreator)
+        {
+            BuffCreator = buffCreator;
             _controller.AddBuff(this);
         }
 
-        public bool IsDurationStacked => BuffCreator.DurationStacked;
+        public bool IsDurationStacked => IBuffCreator.IsDurationStacked;
 
-        public IBuffCreator BuffCreator { get; set; }
+        public IBuffCreator IBuffCreator => BuffCreator;
 
         public void Tick(float delta)
         {
@@ -44,17 +52,26 @@ namespace _Project.Scripts.Buffs
      */
         public void Activate()
         {
-            if (IsDurationStacked || Duration <= 0)
+            if (Duration <= 0)
             {
-                Duration += BuffCreator.Duration;
+                ApplyEffect();
+                Duration += IBuffCreator.Duration;
             }
+
+            else if (IsDurationStacked)
+            {
+                Duration += IBuffCreator.Duration;
+            }
+        }
+
+        public void End()
+        {
+            OnEnd();
+            _controller.RemoveBuff(this);           
         }
 
         protected abstract void ApplyEffect();
 
-        public void SetEffect(IBuffCreator buffCreator) => BuffCreator = buffCreator;
-
-        public abstract void End();
+        protected abstract void OnEnd();
     }
 }
-

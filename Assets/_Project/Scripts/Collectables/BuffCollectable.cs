@@ -8,7 +8,8 @@ namespace _Project.Scripts.Collectables
 {
     public class BuffCollectable : Collectable
     {
-        public List<IBuffCreator> BuffCreators;
+        public List<BuffCreator> BuffCreators;
+        
         private BuffFactory _factory;
 
         [Inject]

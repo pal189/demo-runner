@@ -40,6 +40,7 @@ namespace _Project.Scripts.Infrastructure.Factories
         {
             var prefab = _assetProvider.GetPrefab(AssetPaths.PlatformPaths[Random.Range(0, AssetPaths.PlatformPaths.Length)]);
             var platform = _container.InstantiatePrefab(prefab, at, Quaternion.identity, parent);
+            // var platform = _container.i(prefab, at, Quaternion.identity, parent);
             
             return platform;
         }

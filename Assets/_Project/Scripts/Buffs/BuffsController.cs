@@ -21,20 +21,20 @@ namespace _Project.Scripts.Buffs
 
         public void AddBuff(IBuff buff)
         {
-            if (_buffs.ContainsKey(buff.BuffCreator))
+            if (_buffs.ContainsKey(buff.IBuffCreator))
             {
-                _buffs[buff.BuffCreator].Activate();
+                _buffs[buff.IBuffCreator].Activate();
             }
             else
             {
-                _buffs.Add(buff.BuffCreator, buff);
+                _buffs.Add(buff.IBuffCreator, buff);
                 buff.Activate();
             }
         }
 
         public void RemoveBuff(IBuff buff)
         {
-            _buffs.Remove(buff.BuffCreator);
+            _buffs.Remove(buff.IBuffCreator);
         }
     }
 }

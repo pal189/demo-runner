@@ -6,21 +6,27 @@ namespace _Project.Scripts.Effects
     public interface IBuffCreator
     {
         float Duration { get; }
-        bool DurationStacked { get; }
+        bool IsDurationStacked { get; }
         void Create(BuffFactory factory);
     }
-    
-    public abstract class BuffCreator : ScriptableObject, IBuffCreator
-    {
-        [SerializeField]
-        private float _duration;
 
-        [SerializeField]
-        private bool _durationStacked;
+    public abstract class BuffCreator : ScriptableObject
+    {
+        public abstract void Create(BuffFactory factory);
+    }
+
+    public abstract class BuffCreator<T> : BuffCreator, IBuffCreator where T : IBuff
+    {
+        [SerializeField] private float _duration;
+
+        [SerializeField] private bool _isDurationStacked;
 
         public float Duration => _duration;
-        public bool DurationStacked => _durationStacked;
-        
-        public abstract void Create(BuffFactory factory);
+        public bool IsDurationStacked => _isDurationStacked;
+
+        public override void Create(BuffFactory factory)
+        {
+            factory.CreateBuff<T>(this);
+        }
     }
 }
