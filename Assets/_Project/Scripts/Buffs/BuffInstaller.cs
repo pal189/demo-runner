@@ -1,4 +1,5 @@
-﻿using UnityEngine.Rendering;
+﻿using _Project.Scripts.Buffs.Creators;
+using UnityEngine.Rendering;
 using Zenject;
 
 namespace _Project.Scripts.Buffs
@@ -12,6 +13,7 @@ namespace _Project.Scripts.Buffs
                 .AsSingle().NonLazy();
             
             Container.Bind<SpeedBuff>().AsTransient();
+            Container.Bind<FlightBuff>().AsTransient();
         }
     }
 }

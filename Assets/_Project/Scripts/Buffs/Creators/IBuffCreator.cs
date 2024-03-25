@@ -1,7 +1,6 @@
-﻿using _Project.Scripts.Buffs;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace _Project.Scripts.Effects
+namespace _Project.Scripts.Buffs.Creators
 {
     public interface IBuffCreator
     {

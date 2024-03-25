@@ -10,6 +10,7 @@ namespace _Project.Scripts.Heroes
     [RequireComponent(typeof(HeroAnimator))]
     public class HeroMove : MonoBehaviour
     {
+        private const float MoveSpeed = 0.7f;
         public Transform Hero;
         public HeroAnimator HeroAnimator;
         public CharacterController CharacterController;
@@ -27,11 +28,12 @@ namespace _Project.Scripts.Heroes
         private IInputService _inputService;
         private Tween _jumpTween;
         private Tween _steerTween;
+
         private int _targetPositionIndex;
 
         private void Awake()
         {
-            HeroAnimator.Move(0.7f);
+            HeroAnimator.Move(MoveSpeed);
             Fall();
         }
 
@@ -43,6 +45,56 @@ namespace _Project.Scripts.Heroes
             _targetPositionIndex = InitialPositionIndex;
             _inputService.OnSwipeLeft.Subscribe(_ => TrySteerLeft()).AddTo(this);
             _inputService.OnSwipeRight.Subscribe(_ => TrySteerRight()).AddTo(this);
+        }
+
+        public void Fly()
+        {
+            if (_fallTween != null)
+            {
+                _fallTween.Kill();
+                _fallTween = null;
+            }
+            
+            if (Hero.position.y >= JumpHeight
+                || _jumpTween != null)
+                return;
+
+            _fallTween.Kill();
+            _jumpTween = Hero
+                .DOMoveY(JumpHeight, Math.Abs(JumpHeight - Hero.position.y) / JumpSpeed)
+                .OnComplete(() => HeroAnimator.MidAir())
+                .OnKill(() =>
+                {
+                    _jumpTween = null;
+                });
+
+            HeroAnimator.Jump();
+        }
+
+        public void Fall()
+        {
+            if (_jumpTween != null)
+            {
+                _jumpTween.Kill();
+                _jumpTween = null;
+            }
+            
+            if (_fallTween != null)
+                return;
+
+            _fallTween = Hero
+                .DOMoveY(FloorHeight, Math.Abs(Hero.position.y - FloorHeight) / FallSpeed)
+                .OnComplete(() =>
+                {
+                    HeroAnimator.StopJumping();
+                    HeroAnimator.Move(MoveSpeed);
+                })
+                .OnKill(() =>
+                {
+                    _fallTween = null;
+                });
+            
+            HeroAnimator.Fall();
         }
 
         private void TrySteerLeft()
@@ -88,39 +140,5 @@ namespace _Project.Scripts.Heroes
 
         private bool IsHeroSteering() =>
             _steerTween != null;
-
-        private void Fall()
-        {
-            if (_fallTween != null)
-                return;
-
-            _fallTween = Hero
-                .DOMoveY(FloorHeight, Math.Abs(Hero.position.y - FloorHeight) / FallSpeed)
-                .OnKill(() =>
-                {
-                    _fallTween = null;
-                });
-            
-            HeroAnimator.StopJumping();
-        }
-
-        private void Jump()
-        {
-            if (Hero.position.y >= JumpHeight
-                || _jumpTween != null)
-                return;
-
-            _fallTween.Kill();
-            _jumpTween = Hero
-                .DOMoveY(JumpHeight, Math.Abs(JumpHeight - Hero.position.y) / JumpSpeed)
-                .OnKill(() =>
-                {
-                    _jumpTween = null;
-                });
-
-            HeroAnimator.Jump();
-        }
-        
-        
     }
 }

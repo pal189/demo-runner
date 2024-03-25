@@ -1,5 +1,5 @@
-﻿using _Project.Scripts.Data;
-using _Project.Scripts.Effects;
+﻿using _Project.Scripts.Buffs.Creators;
+using _Project.Scripts.Data;
 
 namespace _Project.Scripts.Buffs
 {

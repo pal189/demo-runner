@@ -110,4 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04219c6414b8442190652b25e1247704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuffCreators: []
+  BuffCreators:
+  - {fileID: 11400000, guid: c790630dd77f15d46b5e226b7cb0e04f, type: 2}

@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Effects;
+﻿using _Project.Scripts.Buffs.Creators;
 using UnityEngine;
 
 namespace _Project.Scripts.Buffs
