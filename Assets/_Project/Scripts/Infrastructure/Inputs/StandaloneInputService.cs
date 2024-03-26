@@ -2,6 +2,9 @@
 
 namespace _Project.Scripts.Infrastructure.Inputs
 {
+    /// <summary>
+    /// The service for standalone input.
+    ///     
     public class StandaloneInputService : InputService
     {
         protected const string Horizontal = "Horizontal";

@@ -8,6 +8,9 @@ using Zenject;
 
 namespace _Project.Scripts.Infrastructure
 {
+    /// <summary>
+    ///  Configurates dependencies and services for the whole project.
+    /// </summary>
     public class ProjectInstaller : MonoInstaller
     {
         public CurtainService CurtainServicePrefab;

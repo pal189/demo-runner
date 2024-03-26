@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace _Project.Scripts.Platforms.Editor
 {
+    /// <summary>
+    /// Editor for the platform spawner. Draws a green sphere in the editor for quick find in the scene.
+    /// 
     [CustomEditor(typeof(PlatformSpawner))]
     public class PlatformSpawnerEditor : UnityEditor.Editor
     {

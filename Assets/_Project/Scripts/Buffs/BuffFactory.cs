@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Buffs.Creators;
+﻿using _Project.Scripts.Buffs.Buffs;
+using _Project.Scripts.Buffs.Creators;
 using Zenject;
 
 namespace _Project.Scripts.Buffs
@@ -8,6 +9,9 @@ namespace _Project.Scripts.Buffs
         T CreateBuff<T>(IBuffCreator creator) where T : IBuff;
     }
 
+    /// <summary>
+    /// The factory that creates buffs. It resolves the buff and then passes its buff creator to it.
+    /// </summary>
     public class BuffFactory : IBuffFactory
     {
         private readonly DiContainer _container;

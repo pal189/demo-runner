@@ -1,7 +1,6 @@
 ﻿using _Project.Scripts.Buffs.Creators;
-using UnityEngine;
 
-namespace _Project.Scripts.Buffs
+namespace _Project.Scripts.Buffs.Buffs
 {
     public interface IBuff
     {
@@ -13,6 +12,9 @@ namespace _Project.Scripts.Buffs
 
     }
 
+    /// <summary>
+    /// The base class for all the buffs. It applies buff effect and manages its duration.
+    /// 
     public abstract class Buff<T> : IBuff where T : IBuffCreator
     {
         private readonly BuffsController _controller;
@@ -46,10 +48,7 @@ namespace _Project.Scripts.Buffs
                 IsFinished = true;
             }
         }
-
-        /**
-     * Activates buff or extends duration if ScriptableBuff has IsDurationStacked or IsEffectStacked set to true.
-     */
+        
         public void Activate()
         {
             if (Duration <= 0)

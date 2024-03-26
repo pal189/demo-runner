@@ -2,6 +2,9 @@
 
 namespace _Project.Scripts.Collectables
 {
+    /// <summary>
+    /// Simple collectable. OnTriggerEnter with the hero it implements its effect. 
+    /// </summary>
     public class Collectable : MonoBehaviour
     {
         public virtual void OnTriggerEnter(Collider other)

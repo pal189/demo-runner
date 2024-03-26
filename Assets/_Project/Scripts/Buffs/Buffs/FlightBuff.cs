@@ -1,7 +1,11 @@
-﻿using _Project.Scripts.Heroes;
+﻿using _Project.Scripts.Buffs.Creators;
+using _Project.Scripts.Heroes;
 
-namespace _Project.Scripts.Buffs.Creators
+namespace _Project.Scripts.Buffs.Buffs
 {
+    /// <summary>
+    /// The buff that makes the hero fly.
+    /// </summary>
     public class FlightBuff : Buff<FlightBuffCreator>
     {
         private readonly HeroMove _heroMove;

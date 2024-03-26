@@ -9,6 +9,8 @@ namespace _Project.Scripts.Infrastructure
         UniTask LoadSceneAsync(string sceneName, Action onLoaded = null);
     }
 
+    /// <summary>
+    // Provides functionality for loading scenes.    /// </summary>
     public class SceneLoader : ISceneLoader
     {
         public async UniTask LoadSceneAsync(string sceneName, Action onLoaded = null)

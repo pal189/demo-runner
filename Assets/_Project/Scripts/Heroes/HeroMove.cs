@@ -7,6 +7,10 @@ using Zenject;
 
 namespace _Project.Scripts.Heroes
 {
+    /// <summary>
+    /// The class for the hero movement. It subscribes to the events from input and steers the hero accordingly.
+    /// It also handles jumping and falling (now that methods are called directly by Buffs).
+    /// </summary>
     [RequireComponent(typeof(HeroAnimator))]
     public class HeroMove : MonoBehaviour
     {

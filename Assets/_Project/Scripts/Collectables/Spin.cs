@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace _Project.Scripts.Collectables
 {
+    /// <summary>
+    /// Makes the game object spin.
+    /// </summary>
     public class Spin : MonoBehaviour
     {
         private Tween _tween;

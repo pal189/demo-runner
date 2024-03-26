@@ -11,6 +11,9 @@ namespace _Project.Scripts.Infrastructure.GSM
         void Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadedState<TPayload>;
     }
 
+    /// <summary>
+    /// The state machine that controls the game flow.
+    /// </summary>
     public class GameStateMachine : IGameStateMachine, IInitializable
     {
         private readonly Dictionary<Type, IState> _states;

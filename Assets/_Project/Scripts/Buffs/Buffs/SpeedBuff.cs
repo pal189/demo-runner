@@ -1,8 +1,11 @@
 ﻿using _Project.Scripts.Buffs.Creators;
 using _Project.Scripts.Data;
 
-namespace _Project.Scripts.Buffs
+namespace _Project.Scripts.Buffs.Buffs
 {
+    /// <summary>
+    /// The buff that makes that changes game speed.
+    /// </summary>
     public class SpeedBuff : Buff<SpeedBuffCreator>
     {
         private readonly ILevel _level;

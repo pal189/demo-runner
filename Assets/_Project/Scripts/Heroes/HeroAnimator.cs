@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace _Project.Scripts.Heroes
 {
+    /// <summary>
+    /// The class that controlls the Animator of the hero by changing Animator's parameters. 
+    /// </summary>
     public class HeroAnimator : MonoBehaviour
     {
         private static readonly int isMoving = Animator.StringToHash("IsMoving");

@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace _Project.Scripts.Platforms.Editor
 {
+    /// <summary>
+    /// Editor for the platform destroyer. Draws a red sphere in the editor for quick find in the scene.
+    /// 
     [CustomEditor(typeof(PlatformDestroyer))]
     public class PlatformDestroyerEditor : UnityEditor.Editor
     {

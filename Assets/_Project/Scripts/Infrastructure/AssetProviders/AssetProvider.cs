@@ -9,6 +9,9 @@ namespace _Project.Scripts.Infrastructure.AssetProviders
         GameObject GetPrefab(string path);
     }
     
+    /// <summary>
+    /// A service that provides assets.
+    /// </summary>
     public class AssetProvider : IAssetProvider
     {
         public GameObject Instantiate(string path) =>

@@ -9,6 +9,9 @@ namespace _Project.Scripts.Infrastructure
         void Hide();
     }
 
+    /// <summary>
+    /// Shows and hides a Curtain (loading screen). 
+    /// </summary>
     public class CurtainService : MonoBehaviour, ICurtainService
     {
         public CanvasGroup CurtainCanvasGroup;

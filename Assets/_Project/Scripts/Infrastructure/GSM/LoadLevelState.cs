@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace _Project.Scripts.Infrastructure.GSM
 {
+    /// <summary>
+    /// The state that loads level scenes.
+    /// </summary>
     public class LoadLevelState : IPayloadedState<string>
     {
         private const string StartPointTag = "StartPoint";

@@ -2,6 +2,9 @@ using DG.Tweening;
 
 namespace _Project.Scripts.Infrastructure.GSM
 {
+    /// <summary>
+    /// The state that bootstraps the game.
+    /// </summary>
     public class BootstrapState : ISimpleState
     {
         private const string StartUpScene = "StartUp";

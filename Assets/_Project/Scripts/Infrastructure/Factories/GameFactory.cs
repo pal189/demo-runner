@@ -1,6 +1,5 @@
 ﻿using _Project.Scripts.Heroes;
 using _Project.Scripts.Infrastructure.AssetProviders;
-using _Project.Scripts.Platforms;
 using UnityEngine;
 using Zenject;
 
@@ -12,6 +11,10 @@ namespace _Project.Scripts.Infrastructure.Factories
         GameObject CreatePlatform(Vector3 at, Transform parent = null);
     }
     
+    /// <summary>
+    /// The factory for creating game objects. It gets assets from the asset provider. Then it creates objects
+    /// and inject dependencies using the container.
+    /// </summary>
     public class GameFactory : IGameFactory
     {
         private readonly IAssetProvider _assetProvider;

@@ -10,6 +10,9 @@ namespace _Project.Scripts.Infrastructure.Inputs
         ReactiveCommand OnSwipeRight { get; }
     }
     
+    /// <summary>
+    /// Base class for input services.
+    /// </summary>
     public abstract class InputService : IInputService, IDisposable
     {
         private const string SwipeLeft = "SwipeLeft";

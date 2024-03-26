@@ -6,6 +6,9 @@ using Zenject;
 
 namespace _Project.Scripts.Collectables
 {
+    /// <summary>
+    /// Collectable with multiple buff creators. It will create that buffs when collected.
+    /// </summary>
     public class BuffCollectable : Collectable
     {
         public List<BuffCreator> BuffCreators;

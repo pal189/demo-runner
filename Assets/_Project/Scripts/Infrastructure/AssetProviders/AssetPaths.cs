@@ -1,5 +1,8 @@
 ﻿namespace _Project.Scripts.Infrastructure.AssetProviders
 {
+    /// <summary>
+    /// Separates asset paths.
+    /// </summary>
     public class AssetPaths
     {
         public const string HeroPath = "Hero/Hero";

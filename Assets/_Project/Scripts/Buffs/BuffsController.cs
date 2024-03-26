@@ -1,11 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using _Project.Scripts.Buffs.Buffs;
 using _Project.Scripts.Buffs.Creators;
 using UnityEngine;
 using Zenject;
 
 namespace _Project.Scripts.Buffs
 {
+    /// <summary>
+    /// The controller that manages lifcycle of all the buffs. it adds and removes the buffs and decrease their duration over time.
+    /// 
     public class BuffsController : ITickable
     {
         private readonly Dictionary <IBuffCreator, IBuff> _buffs = new Dictionary<IBuffCreator, IBuff>();

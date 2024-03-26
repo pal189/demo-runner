@@ -4,6 +4,9 @@ using Zenject;
 
 namespace _Project.Scripts.Platforms
 {
+    /// <summary>
+    /// Makes the platform move.
+    /// 
     public class PlatformMove : MonoBehaviour
     {
         public Transform Transform;

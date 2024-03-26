@@ -8,6 +8,9 @@ namespace _Project.Scripts.Data
         float CurrentSpeed { get; set; }
     }
 
+    /// <summary>
+    /// The level data (its global variables).
+    /// </summary>
     public class Level : MonoBehaviour, ILevel, IInitializable
     {
         private const float MinSpeed = 1;

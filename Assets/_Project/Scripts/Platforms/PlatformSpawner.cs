@@ -4,6 +4,9 @@ using Zenject;
 
 namespace _Project.Scripts.Platforms
 {
+    /// <summary>
+    /// Spawns next platform when collides with the platform marker of the previous platform.
+    /// 
     [RequireComponent(typeof(Collider))]
     public class PlatformSpawner : MonoBehaviour
     {
