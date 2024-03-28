@@ -3,7 +3,7 @@
 namespace _Project.Scripts.Collectables
 {
     /// <summary>
-    /// Simple collectable. OnTriggerEnter with the hero it implements its effect. 
+    /// Can be collected by the player. OnTriggerEnter with the hero it is destroed and (to be implemented) adds coins to the player 
     /// </summary>
     public class Collectable : MonoBehaviour
     {

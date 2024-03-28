@@ -7,9 +7,9 @@ using Zenject;
 namespace _Project.Scripts.Collectables
 {
     /// <summary>
-    /// Collectable with multiple buff creators. It will create that buffs when collected.
+    /// Buff behavior for Collectables. It has a collection of buff creators which will create buffs on collision with player.
     /// </summary>
-    public class BuffCollectable : Collectable
+    public class CollectableBuff : MonoBehaviour
     {
         public List<BuffCreator> BuffCreators;
         
@@ -19,14 +19,12 @@ namespace _Project.Scripts.Collectables
         public void Construct(BuffFactory factory) =>
             _factory = factory;
         
-        public override void OnTriggerEnter(Collider other)
+        public void OnTriggerEnter(Collider other)
         {
             foreach (var creator in BuffCreators)
             {
                 creator.Create(_factory);
             }
-
-            base.OnTriggerEnter(other);
         }
     }
 }
