@@ -48,7 +48,7 @@ namespace _Project.Scripts._Core
         }
 
         private void SpawnSimpleInputObject() => 
-            Container.InstantiatePrefab(SimpleInputPrefab);
+            Instantiate(SimpleInputPrefab);
 
         private void RegisterInputService()
         {
