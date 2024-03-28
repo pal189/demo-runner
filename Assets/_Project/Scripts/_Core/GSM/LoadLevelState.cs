@@ -35,9 +35,14 @@ namespace _Project.Scripts._Core.GSM
 
         private void OnLevelLoaded()
         {
+            SpawnHero();
+            _stateMachine.Enter<GameLoopState>();
+        }
+
+        private void SpawnHero()
+        {
             GameObject startPoint = GameObject.FindWithTag(StartPointTag);
             _factory.CreateHero(startPoint.transform.position, startPoint.transform);
-            _stateMachine.Enter<GameLoopState>();
         }
     }
 }

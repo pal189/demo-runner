@@ -12,19 +12,24 @@ namespace _Project.Scripts.Collectables
     public class CollectableBuff : MonoBehaviour
     {
         public List<BuffCreator> BuffCreators;
-        
         private BuffFactory _factory;
+        private bool isApllied;
 
         [Inject]
-        public void Construct(BuffFactory factory) =>
+        private void Construct(BuffFactory factory) =>
             _factory = factory;
         
-        public void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
+            if(isApllied)
+                return;
+            
             foreach (var creator in BuffCreators)
             {
                 creator.Create(_factory);
             }
+            
+            isApllied = true;
         }
     }
 }
