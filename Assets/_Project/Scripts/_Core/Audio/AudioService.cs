@@ -23,8 +23,12 @@ namespace _Project.Scripts._Core.Audio
         public void PlaySound(AudioClip clip, Vector3 at) =>
             AudioSource.PlayClipAtPoint(clip, at);
         
-        public void PlayLevelTheme() =>
-            _musicSource.PlayOneShot(_levelTheme);
+        public void PlayLevelTheme()
+        {
+            _musicSource.clip = _levelTheme;
+            _musicSource.loop = true;
+            _musicSource.Play();
+        }
 
         public void StopMusic() => 
             _musicSource.Stop();
