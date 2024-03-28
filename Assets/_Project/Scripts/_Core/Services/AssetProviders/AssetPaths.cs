@@ -1,4 +1,4 @@
-﻿namespace _Project.Scripts.Infrastructure.AssetProviders
+﻿namespace _Project.Scripts._Core.Services.AssetProviders
 {
     /// <summary>
     /// Separates asset paths.

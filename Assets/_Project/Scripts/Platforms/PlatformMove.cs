@@ -1,4 +1,4 @@
-using _Project.Scripts.Data;
+using _Project.Scripts.Level;
 using UnityEngine;
 using Zenject;
 

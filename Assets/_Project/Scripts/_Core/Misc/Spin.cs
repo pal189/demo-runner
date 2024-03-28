@@ -1,7 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-namespace _Project.Scripts.Collectables
+namespace _Project.Scripts._Core.Misc
 {
     /// <summary>
     /// Makes the game object spin.

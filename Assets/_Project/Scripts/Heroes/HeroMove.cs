@@ -1,5 +1,5 @@
 ﻿using System;
-using _Project.Scripts.Infrastructure.Inputs;
+using _Project.Scripts._Core.Services.Inputs;
 using DG.Tweening;
 using UniRx;
 using UnityEngine;

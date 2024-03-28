@@ -1,6 +1,6 @@
 ﻿using Zenject;
 
-namespace _Project.Scripts.Data
+namespace _Project.Scripts.Level
 {
     /// <summary>
     /// The installer for the level. Binds the level.

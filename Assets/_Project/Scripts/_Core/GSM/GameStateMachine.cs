@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using _Project.Scripts.Infrastructure.Factories;
+using _Project.Scripts._Core.Services;
+using _Project.Scripts._Core.Services.Factories;
 using Zenject;
 
-namespace _Project.Scripts.Infrastructure.GSM
+namespace _Project.Scripts._Core.GSM
 {
     public interface IGameStateMachine
     {

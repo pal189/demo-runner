@@ -2,7 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 
-namespace _Project.Scripts.Infrastructure
+namespace _Project.Scripts._Core.Services
 {
     public interface ISceneLoader
     {
@@ -10,7 +10,8 @@ namespace _Project.Scripts.Infrastructure
     }
 
     /// <summary>
-    // Provides functionality for loading scenes.    /// </summary>
+    /// Provides functionality for loading scenes.
+    /// </summary>
     public class SceneLoader : ISceneLoader
     {
         public async UniTask LoadSceneAsync(string sceneName, Action onLoaded = null)

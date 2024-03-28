@@ -2,7 +2,7 @@
 using UniRx;
 using UnityEngine;
 
-namespace _Project.Scripts.Infrastructure.Inputs
+namespace _Project.Scripts._Core.Services.Inputs
 {
     public interface IInputService
     {

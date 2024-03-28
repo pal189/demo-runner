@@ -1,12 +1,13 @@
 ﻿using System;
-using _Project.Scripts.Infrastructure.AssetProviders;
-using _Project.Scripts.Infrastructure.Factories;
-using _Project.Scripts.Infrastructure.GSM;
-using _Project.Scripts.Infrastructure.Inputs;
+using _Project.Scripts._Core.GSM;
+using _Project.Scripts._Core.Services;
+using _Project.Scripts._Core.Services.AssetProviders;
+using _Project.Scripts._Core.Services.Factories;
+using _Project.Scripts._Core.Services.Inputs;
 using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts.Infrastructure
+namespace _Project.Scripts._Core
 {
     /// <summary>
     ///  Configurates dependencies and services for the whole project.

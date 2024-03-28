@@ -1,7 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-namespace _Project.Scripts.Infrastructure
+namespace _Project.Scripts._Core.Services
 {
     public interface ICurtainService
     {

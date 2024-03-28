@@ -1,9 +1,9 @@
-﻿using _Project.Scripts.Heroes;
-using _Project.Scripts.Infrastructure.AssetProviders;
+﻿using _Project.Scripts._Core.Services.AssetProviders;
+using _Project.Scripts.Heroes;
 using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts.Infrastructure.Factories
+namespace _Project.Scripts._Core.Services.Factories
 {
     public interface IGameFactory
     {

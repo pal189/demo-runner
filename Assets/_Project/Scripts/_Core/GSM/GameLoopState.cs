@@ -1,4 +1,4 @@
-namespace _Project.Scripts.Infrastructure.GSM
+namespace _Project.Scripts._Core.GSM
 {
     /// <summary>
     /// The state that runs the game loop. Currently just a placeholder.

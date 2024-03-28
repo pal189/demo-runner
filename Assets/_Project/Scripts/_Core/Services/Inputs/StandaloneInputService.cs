@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Project.Scripts.Infrastructure.Inputs
+namespace _Project.Scripts._Core.Services.Inputs
 {
     /// <summary>
     /// The service for standalone input.

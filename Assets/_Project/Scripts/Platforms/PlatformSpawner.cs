@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Infrastructure.Factories;
+﻿using _Project.Scripts._Core.Services.Factories;
 using UnityEngine;
 using Zenject;
 

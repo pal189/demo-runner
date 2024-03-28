@@ -1,4 +1,4 @@
-namespace _Project.Scripts.Infrastructure.GSM
+namespace _Project.Scripts._Core.GSM
 {
     public interface IState
     {

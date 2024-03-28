@@ -1,6 +1,7 @@
+using _Project.Scripts._Core.Services;
 using DG.Tweening;
 
-namespace _Project.Scripts.Infrastructure.GSM
+namespace _Project.Scripts._Core.GSM
 {
     /// <summary>
     /// The state that bootstraps the game.

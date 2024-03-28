@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts.Data
+namespace _Project.Scripts.Level
 {
     public interface ILevel
     {
