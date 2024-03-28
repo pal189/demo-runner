@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2593500573908973898}
   - component: {fileID: -7851184920632017884}
   - component: {fileID: -3717736168636652800}
+  - component: {fileID: 1484273913642150406}
+  - component: {fileID: 3758252029327509757}
   m_Layer: 0
   m_Name: Coin_base
   m_TagString: Untagged
@@ -67,6 +69,31 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1484273913642150406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593500573908973897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5652f1797ada4bdd886d9b1be14b9ae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3758252029327509757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593500573908973897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6f6b6b5af04a9f937c5027b46b423b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: d8fcc830a0110c34c98ee8a0eab850a4, type: 3}
 --- !u!1001 &2593500574150701770
 PrefabInstance:
   m_ObjectHideFlags: 0

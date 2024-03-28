@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Project.Scripts._Core.Audio;
 using _Project.Scripts._Core.Services;
 using _Project.Scripts._Core.Services.Factories;
 using Zenject;
@@ -20,13 +21,13 @@ namespace _Project.Scripts._Core.GSM
         private readonly Dictionary<Type, IState> _states;
         private IState _activeState;
 
-        public GameStateMachine(ISceneLoader sceneLoader, IGameFactory factory, ICurtainService curtain)
+        public GameStateMachine(ISceneLoader sceneLoader, IGameFactory factory, ICurtainService curtain, IAudioService audio)
         {
             _states = new Dictionary<Type, IState>()
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, factory, curtain),
-                [typeof(GameLoopState)] = new GameLoopState()
+                [typeof(GameLoopState)] = new GameLoopState(audio)
             };
         }
 

@@ -14,7 +14,7 @@ namespace _Project.Scripts.Platforms
         private ILevel _level;
 
         [Inject]
-        public void Construct(ILevel level)
+        private void Construct(ILevel level)
         {
             _level = level;
         }

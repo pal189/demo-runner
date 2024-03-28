@@ -17,16 +17,15 @@ namespace _Project.Scripts.Level
         public float InitialSpeed;
         private float _currentSpeed;
 
-        public void Initialize()
-        {
-            CurrentSpeed = InitialSpeed;
-        }
-
-
         public float CurrentSpeed
         {
             get => _currentSpeed;
             set => _currentSpeed = Mathf.Max(value, MinSpeed);
+        }
+
+        public void Initialize()
+        {
+            CurrentSpeed = InitialSpeed;
         }
     }
 }

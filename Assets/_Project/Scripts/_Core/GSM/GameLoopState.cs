@@ -1,3 +1,5 @@
+using _Project.Scripts._Core.Audio;
+
 namespace _Project.Scripts._Core.GSM
 {
     /// <summary>
@@ -5,12 +7,27 @@ namespace _Project.Scripts._Core.GSM
     /// </summary>
     public class GameLoopState : ISimpleState
     {
-        public void Exit()
+        private readonly IAudioService _audio;
+
+        public GameLoopState(IAudioService audio)
         {
+            _audio = audio;
         }
 
         public void Enter()
         {
+            PlayLevelMusic();
         }
+
+        public void Exit()
+        {
+            StopLevelMusic();
+        }
+
+        private void StopLevelMusic() => 
+            _audio.StopMusic();
+
+        private void PlayLevelMusic() => 
+            _audio.PlayLevelTheme();
     }
 }

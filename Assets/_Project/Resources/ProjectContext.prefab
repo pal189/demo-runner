@@ -76,3 +76,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurtainServicePrefab: {fileID: 7157891010855719610, guid: 00a322f2dd674ad41ab8eb38f48e4f6a,
     type: 3}
+  AudioServicePrefab: {fileID: 2757689220630522288, guid: 00bb65f6188be1c4593dffc6a2917c4b,
+    type: 3}

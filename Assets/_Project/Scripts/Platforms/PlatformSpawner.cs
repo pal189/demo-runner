@@ -13,7 +13,7 @@ namespace _Project.Scripts.Platforms
         private IGameFactory _factory;
 
         [Inject]
-        public void Construct(IGameFactory factory) =>
+        private void Construct(IGameFactory factory) =>
             _factory = factory;
         
         private void OnTriggerEnter(Collider platformMarker) => 
