@@ -19,11 +19,13 @@ namespace _Project.Scripts._Core
         private const string AudioServiceName = "AudioService";
         public CurtainService CurtainServicePrefab;
         public AudioService AudioServicePrefab;
+        public GameObject SimpleInputPrefab;
 
         public override void InstallBindings()
         {
             RegisterCurtainService();
             RegisterAssetProvider();
+            SpawnSimpleInputObject();
             RegisterInputService();
             RegisterGameFactory();
             RegisterSceneLoader();
@@ -36,7 +38,6 @@ namespace _Project.Scripts._Core
             Container.BindInterfacesTo<CurtainService>()
                 .FromComponentInNewPrefab(CurtainServicePrefab)
                 .WithGameObjectName(CurtainName)
-                .UnderTransform(transform)
                 .AsSingle().NonLazy();
         }
 
@@ -45,6 +46,9 @@ namespace _Project.Scripts._Core
             Container.BindInterfacesTo<AssetProvider>()
                 .AsSingle().NonLazy();
         }
+
+        private void SpawnSimpleInputObject() => 
+            Container.InstantiatePrefab(SimpleInputPrefab);
 
         private void RegisterInputService()
         {
@@ -75,7 +79,6 @@ namespace _Project.Scripts._Core
             Container.BindInterfacesTo<AudioService>()
                 .FromComponentInNewPrefab(AudioServicePrefab)
                 .WithGameObjectName(AudioServiceName)
-                .UnderTransform(transform)
                 .AsSingle().NonLazy();
         }
 

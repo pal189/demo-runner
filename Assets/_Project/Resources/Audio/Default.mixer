@@ -27,7 +27,7 @@ AudioMixerController:
   - {fileID: 24500006}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
-  m_EnableSuspend: 1
+  m_EnableSuspend: 0
   m_UpdateMode: 0
   m_ExposedParameters: []
   m_AudioMixerGroupViews:
@@ -83,7 +83,13 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: b449343fc547cdd43a4bb47e9f08ff90
   m_FloatValues:
+    c224b091b292fa84aa9df9faf3fb1e9c: 0
     3d86c2f12cc98744e955196bc68cabcb: -60
+    a6d468d79514f1042845d66a16cc0744: 0.1
+    9d0a85f9c00776d4ca684728fdcddb78: 6
+    a2d792bcb1c9b5f4bbcc55a6f5a4086d: 1.31
+    db8950dd0c8ca3344b5b4ad12e94aec9: 3320
+    d378860fa5e526749b9da8c79b38ff98: 1
   m_TransitionOverrides: {}
 --- !u!243 &64272602540645118
 AudioMixerGroupController:
@@ -133,7 +139,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 6708693688393290033}
-  m_UserColorIndex: 0
+  m_UserColorIndex: 1
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
