@@ -70,9 +70,15 @@ namespace _Project.Scripts.Heroes
 
             _fallTween.Kill();
 
+            IsMoving.Value = true;
+            
             _jumpTween = Hero
                 .DOMoveY(JumpHeight, Math.Abs(JumpHeight - Hero.position.y) / JumpSpeed)
-                .OnComplete(() => HeroAnimator.MidAir())
+                .OnComplete(() =>
+                {
+                    IsMoving.Value = false;
+                    HeroAnimator.MidAir();
+                })
                 .OnKill(() => { _jumpTween = null; });
 
             HeroAnimator.Jump();
@@ -88,12 +94,15 @@ namespace _Project.Scripts.Heroes
 
             if (_fallTween != null)
                 return;
-
+            
+            IsMoving.Value = true;
+            
             _fallTween = Hero
                 .DOMoveY(FloorHeight, Math.Abs(Hero.position.y - FloorHeight) / FallSpeed)
                 .OnComplete(() =>
                 {
                     HeroAnimator.StopJumping();
+                    IsMoving.Value = false;
                     HeroAnimator.Move(MoveSpeed);
                 })
                 .OnKill(() => { _fallTween = null; });

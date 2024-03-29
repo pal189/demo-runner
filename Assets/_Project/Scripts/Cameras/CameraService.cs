@@ -12,6 +12,8 @@ namespace _Project.Scripts.Cameras
 
     public class CameraService : IDisposable, ICameraService
     {
+        private const float OffsetY = 5.7f;
+        
         private Camera _camera;
         private HeroMove _heroMove;
         private Transform _transform;
@@ -46,7 +48,7 @@ namespace _Project.Scripts.Cameras
         private void UpdatePosition()
         {
             var oldPosition = _transform.position;
-            _transform.position = new Vector3(_heroMove.transform.position.x, oldPosition.y, oldPosition.z);
+            _transform.position = new Vector3(_heroMove.transform.position.x, _heroMove.transform.position.y + OffsetY, oldPosition.z);
         }
 
         public void Dispose()
