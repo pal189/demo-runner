@@ -98,10 +98,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 5.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5007542181049361189, guid: dd88e736cefd4c144998125dfdb3a860,
+        type: 3}
+      propertyPath: m_Name
+      value: Coin_simple 16
+      objectReference: {fileID: 0}
     - target: {fileID: 5007542181049361190, guid: dd88e736cefd4c144998125dfdb3a860,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007542181049361190, guid: dd88e736cefd4c144998125dfdb3a860,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 5107690651356426218, guid: dd88e736cefd4c144998125dfdb3a860,
         type: 3}
@@ -154,7 +164,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8660024288312955099, guid: dd88e736cefd4c144998125dfdb3a860,
         type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 8877390762013098064}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd88e736cefd4c144998125dfdb3a860, type: 3}
@@ -185,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 6897658786745305204, guid: dffbe42d7b0e7af4c96735694adcd0f5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 49
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6897658786745305204, guid: dffbe42d7b0e7af4c96735694adcd0f5,
         type: 3}
@@ -225,7 +235,7 @@ PrefabInstance:
     - target: {fileID: 6897658786745305207, guid: dffbe42d7b0e7af4c96735694adcd0f5,
         type: 3}
       propertyPath: m_Name
-      value: Coin_SpeedUp
+      value: Coin_SpeedUp 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
