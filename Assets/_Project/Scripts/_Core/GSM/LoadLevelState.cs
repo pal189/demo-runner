@@ -1,6 +1,5 @@
 using _Project.Scripts._Core.Services;
 using _Project.Scripts._Core.Services.Factories;
-using UnityEngine;
 
 namespace _Project.Scripts._Core.GSM
 {
@@ -35,14 +34,7 @@ namespace _Project.Scripts._Core.GSM
 
         private void OnLevelLoaded()
         {
-            SpawnHero();
             _stateMachine.Enter<GameLoopState>();
-        }
-
-        private void SpawnHero()
-        {
-            GameObject startPoint = GameObject.FindWithTag(StartPointTag);
-            _factory.CreateHero(startPoint.transform.position, startPoint.transform);
         }
     }
 }

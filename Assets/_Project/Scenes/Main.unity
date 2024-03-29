@@ -504,21 +504,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformSpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 8728490095013358200, guid: 1bc940f9b936dec44b7864581393e79a,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8728490095013358200, guid: 1bc940f9b936dec44b7864581393e79a,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8728490095013358200, guid: 1bc940f9b936dec44b7864581393e79a,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -605,6 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelInstance: {fileID: 1372187473}
+  Camera: {fileID: 7590250176169006591}
 --- !u!114 &911770343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,11 +1149,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8196999455330162804, guid: 6ff4e2eedf41a534181521b65ff3d186, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ff4e2eedf41a534181521b65ff3d186, type: 3}
+--- !u!20 &7590250176169006591 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8166720409153456565, guid: 6ff4e2eedf41a534181521b65ff3d186,
+    type: 3}
+  m_PrefabInstance: {fileID: 7590250176169006590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
