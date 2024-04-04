@@ -1,3 +1,9 @@
+**Demo project: runner game**
+
+This is simple runner game example developed for demonstration purpose.
+
+***DISCLAIMER***: The project is by all means not a completed product of commercial level of quality. There is a lot of functionality that can be added or improved.
+
 I. **Application lifecycle**
 1. **Dependency Injection (Zenject)**
    
